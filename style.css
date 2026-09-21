@@ -260,32 +260,61 @@ input:focus {
     font-size: .9rem
 }
 
-@media(max-width:850px) {
+@media (max-width: 850px) {
     .dashboard {
         grid-template-columns: 1fr;
         gap: 30px;
-        padding: 50px 22px
+        padding: 40px 20px;
+    }
+
+    h1 {
+        font-size: 12vw;
     }
 }
 
-@media(max-width:520px) {
+@media (max-width: 520px) {
+    .dashboard {
+        padding: 30px 15px;
+    }
+
+    .card {
+        padding: 25px 20px;
+    }
 
     .student-fields,
     .marks-grid {
         grid-template-columns: 1fr;
-        gap: 15px
+        gap: 15px;
     }
 
     .summary {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
     }
 
     .summary div {
         border-right: 0;
-        border-bottom: 1px solid #c9d7c6
+        border-bottom: 1px solid #c9d7c6;
+    }
+
+    .summary div:last-child {
+        border-bottom: 0;
     }
 
     .subject-result {
-        grid-template-columns: repeat(2, 1fr)
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .result-top {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .calculate,
+    .reset {
+        width: 100%;
     }
 }
