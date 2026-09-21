@@ -1,0 +1,291 @@
+* {
+    box-sizing: border-box
+}
+
+:root {
+    --ink: #192a35;
+    --muted: #67747a;
+    --paper: #fffdf8;
+    --accent: #e46b47;
+    --line: #dce2dc
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #eef2eb;
+    color: var(--ink);
+    font-family: Arial, sans-serif
+}
+
+.dashboard {
+    max-width: 1160px;
+    min-height: 100vh;
+    margin: auto;
+    padding: 76px 34px;
+    display: grid;
+    grid-template-columns: .8fr 1.35fr;
+    gap: 75px;
+    align-items: center
+}
+
+.eyebrow,
+small {
+    color: var(--accent);
+    font-size: .72rem;
+    font-weight: bold;
+    letter-spacing: .13em
+}
+
+h1 {
+    margin: 14px 0 0;
+    font: 700 5vw Georgia, serif;
+    letter-spacing: -.04em
+}
+
+h1 em {
+    color: var(--accent)
+}
+
+.intro>p:not(.eyebrow) {
+    max-width: 300px;
+    color: var(--muted);
+    line-height: 1.6
+}
+
+.grade-guide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 260px;
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 1px solid #bcc8bd;
+    font-size: .82rem
+}
+
+.grade-guide b {
+    grid-column: span 2;
+    font-size: .7rem
+}
+
+.card {
+    padding: clamp(25px, 4vw, 45px);
+    background: var(--paper);
+    box-shadow: 0 17px 45px #344c3820
+}
+
+.heading {
+    display: flex;
+    gap: 14px;
+    align-items: center
+}
+
+.heading h2 {
+    margin: 0;
+    font-size: 1.15rem
+}
+
+.heading i {
+    color: var(--muted);
+    font-size: .7rem;
+    font-weight: normal
+}
+
+.marks-title {
+    margin-top: 31px
+}
+
+label {
+    display: block;
+    color: #48575c;
+    font-size: .76rem;
+    font-weight: bold;
+    letter-spacing: .03em
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px 0;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    outline: none;
+    background: transparent;
+    font-size: 1rem
+}
+
+input:focus {
+    border-color: var(--accent)
+}
+
+.student-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 18px
+}
+
+.marks-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-top: 17px
+}
+
+.error-message {
+    min-height: 20px;
+    margin: 20px 0 0;
+    color: #bc3e2c;
+    font-size: .83rem
+}
+
+.actions {
+    display: flex;
+    gap: 16px
+}
+
+.actions button {
+    border: 0;
+    cursor: pointer;
+    font-weight: bold
+}
+
+.calculate {
+    padding: 14px 20px;
+    background: var(--ink);
+    color: white
+}
+
+.calculate b {
+    margin-left: 14px;
+    font-size: 1.1rem
+}
+
+.reset {
+    padding: 14px 5px;
+    background: transparent;
+    color: var(--muted)
+}
+
+.result {
+    margin-top: 40px;
+    padding-top: 26px;
+    border-top: 1px solid var(--line)
+}
+
+.hidden {
+    display: none
+}
+
+.result-top {
+    display: flex;
+    justify-content: space-between
+}
+
+.status {
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: .7rem;
+    font-weight: bold
+}
+
+.pass {
+    background: #dcefdc;
+    color: #286137
+}
+
+.fail {
+    background: #f7dfd9;
+    color: #a63826
+}
+
+.result h2 {
+    margin: 16px 0 5px;
+    font: 700 2rem Georgia, serif
+}
+
+.result p {
+    margin: 0 0 22px;
+    color: var(--muted);
+    font-size: .88rem
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: #dfe9dc
+}
+
+.summary div {
+    padding: 17px 13px;
+    border-right: 1px solid #c9d7c6
+}
+
+.summary div:last-child {
+    border: 0
+}
+
+.summary span {
+    display: block;
+    font-size: .68rem;
+    font-weight: bold;
+    text-transform: uppercase
+}
+
+.summary strong {
+    display: block;
+    margin-top: 6px;
+    font-size: 1.2rem
+}
+
+.subject-result {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 18px
+}
+
+.subject-result div {
+    color: var(--muted);
+    font-size: .7rem;
+    text-align: center
+}
+
+.subject-result strong {
+    display: block;
+    margin-top: 4px;
+    color: var(--ink);
+    font-size: .9rem
+}
+
+@media(max-width:850px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 50px 22px
+    }
+}
+
+@media(max-width:520px) {
+
+    .student-fields,
+    .marks-grid {
+        grid-template-columns: 1fr;
+        gap: 15px
+    }
+
+    .summary {
+        grid-template-columns: 1fr
+    }
+
+    .summary div {
+        border-right: 0;
+        border-bottom: 1px solid #c9d7c6
+    }
+
+    .subject-result {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}

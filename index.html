@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Result Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="dashboard">
+      <section class="intro">
+        <p class="eyebrow">Academic Performance</p>
+        <h1>Student Result<br /><em>Dashboard</em></h1>
+        <p>Enter student details and marks to generate a clear result card.</p>
+        <div class="grade-guide">
+          <b>GRADE GUIDE</b><span>A+ 90–100</span><span>A 80–89</span
+          ><span>B 70–79</span><span>C 60–69</span><span>D 50–59</span
+          ><span>E 40–49</span
+          ><span>F Below 40</span>
+        </div>
+      </section>
+      <section class="card">
+        <form id="resultForm" novalidate>
+          <div class="heading">
+            <small>01</small>
+            <h2>Student details</h2>
+          </div>
+          <div class="student-fields">
+            <label
+              >Student Name<input
+                id="studentName"
+                type="text"
+                placeholder="e.g. Hemant Bothra"
+                required /></label
+            ><label
+              >Roll Number<input
+                id="rollNumber"
+                type="text"
+                placeholder="e.g. 22"
+                required
+            /></label>
+          </div>
+          <div class="heading marks-title">
+            <small>02</small>
+            <h2>Subject marks <i>out of 100</i></h2>
+          </div>
+          <div class="marks-grid">
+            <label
+              >History<input
+                class="mark"
+                id="history"
+                type="number"
+                min="0"
+                max="100"
+                required /></label
+            ><label
+              >Geography<input
+                class="mark"
+                id="geography"
+                type="number"
+                min="0"
+                max="100"
+                required /></label
+            ><label
+              >Mathematics<input
+                class="mark"
+                id="mathematics"
+                type="number"
+                min="0"
+                max="100"
+                required /></label
+            ><label
+              >English<input
+                class="mark"
+                id="english"
+                type="number"
+                min="0"
+                max="100"
+                required /></label
+            ><label
+              >Science<input
+                class="mark"
+                id="science"
+                type="number"
+                min="0"
+                max="100"
+                required
+            /></label>
+          </div>
+          <p id="errorMessage" class="error-message" aria-live="polite"></p>
+          <div class="actions">
+            <button class="calculate" type="submit">
+              Calculate Result <b>→</b></button
+            ><button class="reset" type="reset">Reset</button>
+          </div>
+        </form>
+        <section id="result" class="result hidden" aria-live="polite">
+          <div class="result-top">
+            <small>RESULT CARD</small><span id="status" class="status"></span>
+          </div>
+          <h2 id="resultName">Student Name</h2>
+          <p id="resultRoll">Roll No: —</p>
+          <div class="summary">
+            <div>
+              <span>Total Marks</span><strong id="total">0 / 500</strong>
+            </div>
+            <div>
+              <span>Percentage</span><strong id="percentage">0%</strong>
+            </div>
+            <div><span>Grade</span><strong id="grade">—</strong></div>
+          </div>
+          <div class="subject-result">
+            <div>Best Subject<strong id="bestSubject">—</strong></div>
+            <div>Weakest Subject<strong id="weakestSubject">—</strong></div>
+            <div>Subjects Passed<strong id="subjectsPassed">0</strong></div>
+            <div>Subjects Failed<strong id="subjectsFailed">0</strong></div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
