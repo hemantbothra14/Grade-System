@@ -25,6 +25,13 @@ form.addEventListener("submit", function (event) {
   const mathematicsMark = Number(mathematics);
   const englishMark = Number(english);
   const scienceMark = Number(science);
+  const marks = [
+  historyMark,
+  geographyMark,
+  mathematicsMark,
+  englishMark,
+  scienceMark
+];
 
   if (
       historyMark < 0 || historyMark > 100 ||
